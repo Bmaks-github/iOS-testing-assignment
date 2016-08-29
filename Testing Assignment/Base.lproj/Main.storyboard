@@ -24,15 +24,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WPT-c4-zzT">
-                                <rect key="frame" x="88" y="156" width="462" height="143"/>
-                                <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="143" id="uz9-k4-ePH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g6B-n4-Qgs">
                                 <rect key="frame" x="86" y="76" width="464" height="26"/>
                                 <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
@@ -42,19 +33,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0O-FK-ex8">
-                                <rect key="frame" x="50" y="118" width="120" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0O-FK-ex8">
+                                <rect key="frame" x="50" y="115" width="120" height="30"/>
                                 <state key="normal" title="Change language"/>
                                 <connections>
                                     <action selector="changeLanguageButtonClick:" destination="cDc-S1-Zo6" eventType="touchUpInside" id="wcr-g9-MbA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="EN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYm-LT-X0k">
-                                <rect key="frame" x="50" y="76" width="22" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYm-LT-X0k">
+                                <rect key="frame" x="50" y="76" width="22" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WPT-c4-zzT">
+                                <rect key="frame" x="88" y="156" width="462" height="130"/>
+                                <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="uz9-k4-ePH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -72,7 +72,7 @@
                             <constraint firstItem="FYm-LT-X0k" firstAttribute="leading" secondItem="mnV-Ub-oj1" secondAttribute="leadingMargin" constant="30" id="w3d-MO-tmE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Перекладач" id="BeE-ER-Fyx"/>
+                    <tabBarItem key="tabBarItem" title="Перекладач" image="ic_g_translate" id="BeE-ER-Fyx"/>
                     <connections>
                         <outlet property="labelFromLanguage" destination="FYm-LT-X0k" id="8wz-jJ-bxf"/>
                         <outlet property="labelToLanguage" destination="oa3-wz-BOi" id="3ZB-yv-eTx"/>
@@ -118,7 +118,7 @@
                             <outlet property="delegate" destination="7ts-Hi-24I" id="Oad-6z-cmP"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Зображення" id="PYC-gS-bWm"/>
+                    <tabBarItem key="tabBarItem" title="Зображення" image="ic_gif" id="PYC-gS-bWm"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34C-K8-omQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,7 +146,7 @@
         <!--Дизайн-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DesignPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -178,13 +178,6 @@
                                                     <constraint firstItem="IiQ-V5-zLm" firstAttribute="centerY" secondItem="Oaa-7e-WwF" secondAttribute="centerY" id="Qim-ik-SVO"/>
                                                 </constraints>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rmv-y4-fTv">
-                                                <rect key="frame" x="240" y="75" width="120" height="115"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="115" id="ONu-qA-TNu"/>
-                                                    <constraint firstAttribute="width" constant="120" id="Vcd-VW-UQu"/>
-                                                </constraints>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5R8-Ci-HNP">
                                                 <rect key="frame" x="279" y="198" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -269,6 +262,13 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-user-default" translatesAutoresizingMaskIntoConstraints="NO" id="Rmv-y4-fTv">
+                                                <rect key="frame" x="240" y="75" width="120" height="115"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="115" id="ONu-qA-TNu"/>
+                                                    <constraint firstAttribute="width" constant="120" id="Vcd-VW-UQu"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                                         <constraints>
@@ -337,11 +337,20 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0Eh-Gc-Yh3" secondAttribute="bottom" id="Lr9-gf-3oY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Дизайн" id="5ku-wp-vRa"/>
+                    <tabBarItem key="tabBarItem" title="Дизайн" image="ic_image" id="5ku-wp-vRa"/>
+                    <connections>
+                        <outlet property="userProfileImageView" destination="Rmv-y4-fTv" id="7N9-i3-X9H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="220" y="28"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_g_translate" width="24" height="24"/>
+        <image name="ic_gif" width="24" height="24"/>
+        <image name="ic_image" width="24" height="24"/>
+        <image name="icon-user-default" width="462" height="462"/>
+    </resources>
 </document>

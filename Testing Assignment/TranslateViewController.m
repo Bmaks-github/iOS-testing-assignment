@@ -20,32 +20,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    self.textViewFromLanguage.delegate = self; // ADD THIS LINE
+    self.textViewFromLanguage.delegate = self;
     toLanguage = ua;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
-//    NSLog(@"It's working!");
+    // Cancel all asynchronous AFNetworking requests
     [manager.operationQueue cancelAllOperations];
-    [self someMethod:self.textViewFromLanguage.text];
+
+    [self translateUsingString:self.textViewFromLanguage.text];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (IBAction)changeLanguageButtonClick:(id)sender {
     if (toLanguage == en) {
         toLanguage = ua;
@@ -58,7 +48,7 @@
     }
 }
 
-- (void)someMethod:(NSString*)textFromLanguage {
+- (void)translateUsingString:(NSString*)textFromLanguage {
     
     NSString *toLanguageStr;
     NSString *fromLanguageStr;
@@ -71,7 +61,6 @@
         fromLanguageStr = @"en";
     }
     
-    NSString* API_KEY = @"trnsl.1.1.20160824T130558Z.e9f677aaa7973547.68a207fdf2b923c4f61db073d0a0f334f4b265d7";
     NSString *urlString = [[NSString alloc] initWithFormat:@"https://translate.yandex.net/api/v1.5/tr.json/translate?key=%@&text=%@&lang=%@-%@", API_KEY, textFromLanguage, fromLanguageStr, toLanguageStr];
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -87,9 +76,7 @@
             NSLog(@"%@ %@", response, responseObject);
             
             NSArray *result = [responseObject objectForKey:@"text"];
-            //NSLog(result[0]);
             self.textViewToLanguage.text = result[0];
-
         }
     }];
     [dataTask resume];

@@ -11,6 +11,4 @@
 
 @interface ImageCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (weak, nonatomic) IBOutlet FLAnimatedImageView *animatedImageView;
-
 @end
